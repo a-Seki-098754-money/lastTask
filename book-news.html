@@ -26,7 +26,7 @@
 
         .page-header {
             background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-color) 50%, var(--secondary-color) 100%);
-            color: white;
+            color: var(--text-dark);
             padding: 80px 0 50px 0;
             margin-bottom: 40px;
         }
@@ -69,14 +69,15 @@
 
         .price-tag {
             background: var(--accent-color);
-            color: white;
+            color: var(--main-dark);
             padding: 0.5rem 1rem;
             border-radius: 10px;
             font-weight: bold;
         }
 
         .filter-section {
-            background-color: #f8f9fa;
+            background-color: var(--main-dark);
+            color: var(--background-light);
             border-radius: 10px;
             padding: 20px;
             margin-bottom: 20px;
@@ -169,12 +170,12 @@
     <!-- ページヘッダー -->
     <div class="page-header">
         <div class="container">
-            <h1 class="display-4 fw-bold mb-3">イベント一覧</h1>
-            <p class="lead">全国で開催される音楽イベントを探そう</p>
+            <h1 class="display-4 fw-bold mb-3">注目の新刊・イベント</h1>
+            <p class="lead">話題の著者イベント、文学賞情報、新刊発売日をチェック</p>
             <div class="row mt-4">
                 <div class="col-md-8">
                     <div class="input-group input-group-lg">
-                        <input type="text" class="form-control" placeholder="イベント名、アーティスト名、会場名で検索...">
+                        <input type="text" class="form-control" placeholder="タイトル、著者名、賞名、発売日で検索">
                         <button class="btn btn-light fw-bold" type="button">
                             <i class="bi bi-search"></i> 検索
                         </button>
@@ -193,7 +194,7 @@
 
                     <!-- 日程 -->
                     <div class="filter-section">
-                        <h6 class="fw-bold mb-3">開催日程</h6>
+                        <h6 class="fw-bold mb-3">発売/開催日程</h6>
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="radio" name="date" id="date1" checked>
                             <label class="form-check-label" for="date1">
@@ -203,19 +204,19 @@
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="radio" name="date" id="date2">
                             <label class="form-check-label" for="date2">
-                                今月
+                                今月発売
                             </label>
                         </div>
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="radio" name="date" id="date3">
                             <label class="form-check-label" for="date3">
-                                来月
+                                来月発売
                             </label>
                         </div>
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="radio" name="date" id="date4">
                             <label class="form-check-label" for="date4">
-                                3ヶ月以内
+                                3ヶ月以内発売
                             </label>
                         </div>
                     </div>
@@ -226,37 +227,37 @@
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="checkbox" id="genre1" checked>
                             <label class="form-check-label" for="genre1">
-                                ロック <span class="badge bg-secondary">45</span>
+                                暮らし <span class="badge bg-secondary">45</span>
                             </label>
                         </div>
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="checkbox" id="genre2">
                             <label class="form-check-label" for="genre2">
-                                ポップ <span class="badge bg-secondary">38</span>
+                                生き方 <span class="badge bg-secondary">38</span>
                             </label>
                         </div>
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="checkbox" id="genre3">
                             <label class="form-check-label" for="genre3">
-                                EDM <span class="badge bg-secondary">32</span>
+                                歴史 <span class="badge bg-secondary">32</span>
                             </label>
                         </div>
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="checkbox" id="genre4">
                             <label class="form-check-label" for="genre4">
-                                ジャズ <span class="badge bg-secondary">28</span>
+                                人物 <span class="badge bg-secondary">28</span>
                             </label>
                         </div>
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="checkbox" id="genre5">
                             <label class="form-check-label" for="genre5">
-                                ヒップホップ <span class="badge bg-secondary">25</span>
+                                学習 <span class="badge bg-secondary">25</span>
                             </label>
                         </div>
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="checkbox" id="genre6">
                             <label class="form-check-label" for="genre6">
-                                アコースティック <span class="badge bg-secondary">20</span>
+                                マンガ <span class="badge bg-secondary">20</span>
                             </label>
                         </div>
                     </div>
@@ -267,31 +268,31 @@
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="checkbox" id="venue1">
                             <label class="form-check-label" for="venue1">
-                                東京 <span class="badge bg-secondary">67</span>
+                                オンライン <span class="badge bg-secondary">67</span>
                             </label>
                         </div>
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="checkbox" id="venue2">
                             <label class="form-check-label" for="venue2">
-                                大阪 <span class="badge bg-secondary">45</span>
+                                書店（東京） <span class="badge bg-secondary">45</span>
                             </label>
                         </div>
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="checkbox" id="venue3">
                             <label class="form-check-label" for="venue3">
-                                愛知 <span class="badge bg-secondary">32</span>
+                                図書館 （全国）<span class="badge bg-secondary">32</span>
                             </label>
                         </div>
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="checkbox" id="venue4">
                             <label class="form-check-label" for="venue4">
-                                福岡 <span class="badge bg-secondary">28</span>
+                                ホール（大阪） <span class="badge bg-secondary">28</span>
                             </label>
                         </div>
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="checkbox" id="venue5">
                             <label class="form-check-label" for="venue5">
-                                北海道 <span class="badge bg-secondary">18</span>
+                                カフェ（全国） <span class="badge bg-secondary">18</span>
                             </label>
                         </div>
                     </div>
@@ -302,26 +303,26 @@
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="checkbox" id="price1">
                             <label class="form-check-label" for="price1">
-                                〜¥5,000
+                                〜¥1,500
                             </label>
                         </div>
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="checkbox" id="price2">
                             <label class="form-check-label" for="price2">
-                                ¥5,000〜¥10,000
+                                ¥1,500～¥3,000
                             </label>
                         </div>
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="checkbox" id="price3">
                             <label class="form-check-label" for="price3">
-                                ¥10,000〜
+                                ¥3,000〜
                             </label>
                         </div>
                     </div>
 
                     <!-- チケット状況 -->
                     <div class="filter-section">
-                        <h6 class="fw-bold mb-3">チケット状況</h6>
+                        <h6 class="fw-bold mb-3">入手・予約状況</h6>
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="checkbox" id="status1" checked>
                             <label class="form-check-label" for="status1">
@@ -331,13 +332,13 @@
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="checkbox" id="status2">
                             <label class="form-check-label" for="status2">
-                                残りわずか <span class="badge bg-warning text-dark">45</span>
+                                予約受付中 <span class="badge bg-warning text-dark">45</span>
                             </label>
                         </div>
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="checkbox" id="status3">
                             <label class="form-check-label" for="status3">
-                                完売 <span class="badge bg-danger">78</span>
+                                品薄・増刷決定 <span class="badge bg-danger">78</span>
                             </label>
                         </div>
                     </div>
@@ -358,10 +359,10 @@
                     </div>
                     <div class="btn-group" role="group">
                         <button type="button" class="btn btn-outline-primary sort-btn active">
-                            <i class="bi bi-calendar"></i> 開催日順
+                            <i class="bi bi-calendar"></i> 発売日順
                         </button>
                         <button type="button" class="btn btn-outline-primary sort-btn">
-                            <i class="bi bi-fire"></i> 人気順
+                            <i class="bi bi-fire"></i> 注目度順
                         </button>
                         <button type="button" class="btn btn-outline-primary sort-btn">
                             <i class="bi bi-currency-yen"></i> 価格順
@@ -375,15 +376,17 @@
                         <span class="badge genre-filter-badge active"
                             style="background-color: #e5e7eb; color: #1f2937;">すべて</span>
                         <span class="badge genre-filter-badge"
-                            style="background-color: #fee2e2; color: #991b1b;">ロック</span>
+                            style="background-color: #fee2e2; color: #991b1b;">暮らし</span>
                         <span class="badge genre-filter-badge"
-                            style="background-color: #fef3c7; color: #92400e;">ポップ</span>
+                            style="background-color: #fef3c7; color: #92400e;">生き方</span>
                         <span class="badge genre-filter-badge"
-                            style="background-color: #e0e7ff; color: #3730a3;">EDM</span>
+                            style="background-color: #e0e7ff; color: #3730a3;">歴史</span>
                         <span class="badge genre-filter-badge"
-                            style="background-color: #dbeafe; color: #1e40af;">ジャズ</span>
+                            style="background-color: #dbeafe; color: #1e40af;">人物</span>
                         <span class="badge genre-filter-badge"
-                            style="background-color: #fce7f3; color: #9f1239;">ヒップホップ</span>
+                            style="background-color: #fce7f3; color: #9f1239;">学習</span>
+                        <span class="badge genre-filter-badge"
+                            style="background-color: #fce7f3; color: #9f1239;">マンガ</span>
                     </div>
                 </div>
 
@@ -391,30 +394,29 @@
                 <div class="row g-4 mb-4">
                     <div class="col-md-6">
                         <div class="card event-list-card">
-                            <img src="https://placehold.co/600x200/8b5cf6/ffffff?text=Summer+Fest"
-                                class="event-list-img" alt="Summer Festival">
+                            <img src="img/book_hokuou.jpg" class="event-list-img" alt="Summer Festival">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between align-items-start mb-2">
                                     <div>
                                         <span class="date-badge">
-                                            <i class="bi bi-calendar-event"></i> 12月3日
+                                            <i class="bi bi-calendar-event"></i> 12月15日 発売
                                         </span>
                                     </div>
                                     <span class="badge bg-success">販売中</span>
                                 </div>
-                                <h5 class="card-title fw-bold mb-2">SUMMER MUSIC FESTIVAL 2024</h5>
+                                <h5 class="card-title fw-bold mb-2">北欧ではたらく　移住して見つけた私だけの生き方</h5>
                                 <p class="venue-badge mb-3">
-                                    <i class="bi bi-geo-alt-fill"></i> 東京ビッグサイト
+                                    <i class="bi bi-geo-alt-fill"></i> 萩原健太郎
                                 </p>
                                 <div class="d-flex gap-2 mb-3">
-                                    <span class="badge" style="background-color: #fee2e2; color: #991b1b;">ロック</span>
-                                    <span class="badge" style="background-color: #fef3c7; color: #92400e;">ポップ</span>
+                                    <span class="badge" style="background-color: #fee2e2; color: #991b1b;">暮らし</span>
+                                    <span class="badge" style="background-color: #fef3c7; color: #92400e;">生き方</span>
                                 </div>
                                 <p class="card-text text-muted small mb-3">
-                                    今年も夏の大型フェスが開催!豪華アーティスト50組以上が出演する国内最大級の音楽フェスティバル
+                                    日本から北欧に移住し、現地で自分らしい働き方や暮らし方を見つけた14人の日本人（建築家、デザイナー、翻訳家、パティシエ、雑貨店主など）のリアルなストーリーをまとめた書籍
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div class="price-tag">¥8,000〜</div>
+                                    <div class="price-tag">¥2,420</div>
                                     <button class="btn btn-primary">
                                         詳細を見る <i class="bi bi-arrow-right"></i>
                                     </button>
@@ -425,30 +427,31 @@
 
                     <div class="col-md-6">
                         <div class="card event-list-card">
-                            <img src="https://placehold.co/600x200/ec4899/ffffff?text=Rock+Night" class="event-list-img"
-                                alt="Rock Night">
+                            <img src="img/book_toyotomi.webp" class="event-list-img" alt="Rock Night">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between align-items-start mb-2">
                                     <div>
                                         <span class="date-badge">
-                                            <i class="bi bi-calendar-event"></i> 12月10日
+                                            <i class="bi bi-calendar-event"></i> 12月15日 発売
                                         </span>
                                     </div>
                                     <span class="badge bg-success">販売中</span>
                                 </div>
-                                <h5 class="card-title fw-bold mb-2">ROCK NIGHT JAPAN</h5>
+                                <h5 class="card-title fw-bold mb-2">図解 豊臣秀長</h5>
                                 <p class="venue-badge mb-3">
-                                    <i class="bi bi-geo-alt-fill"></i> 大阪城ホール
+                                    <i class="bi bi-geo-alt-fill"></i> 本郷 和人
                                 </p>
                                 <div class="d-flex gap-2 mb-3">
-                                    <span class="badge" style="background-color: #fee2e2; color: #991b1b;">ロック</span>
-                                    <span class="badge" style="background-color: #1f2937; color: white;">メタル</span>
+                                    <span class="badge" style="background-color: #fee2e2; color: #991b1b;">歴史</span>
+                                    <span class="badge" style="background-color: #1f2937; color: white;">人物</span>
                                 </div>
                                 <p class="card-text text-muted small mb-3">
-                                    日本を代表するロックバンドが集結する一夜限りのスペシャルライブ。圧倒的なパフォーマンスを体感せよ
+                                    2026年大河ドラマで話題の“豊臣兄弟”のことは、この本を読めば丸わかり!<br>
+                                    「秀吉に弟がいたなんて知らなかった!」<br>
+                                    「秀吉の弟・秀長って歴史の教科書にも載ってないけど、どんな人?」<br>
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div class="price-tag">¥6,500〜</div>
+                                    <div class="price-tag">¥1,760</div>
                                     <button class="btn btn-primary">
                                         詳細を見る <i class="bi bi-arrow-right"></i>
                                     </button>
@@ -459,30 +462,31 @@
 
                     <div class="col-md-6">
                         <div class="card event-list-card">
-                            <img src="https://placehold.co/600x200/06b6d4/ffffff?text=Jazz+Live" class="event-list-img"
-                                alt="Jazz Live">
+                            <img src="img/book_a-nya.webp" class="event-list-img" alt="Jazz Live">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between align-items-start mb-2">
                                     <div>
                                         <span class="date-badge">
-                                            <i class="bi bi-calendar-event"></i> 12月15日
+                                            <i class="bi bi-calendar-event"></i> 12月15日 発売
                                         </span>
                                     </div>
                                     <span class="badge bg-warning text-dark">残りわずか</span>
                                 </div>
-                                <h5 class="card-title fw-bold mb-2">TOKYO JAZZ SESSION</h5>
+                                <h5 class="card-title fw-bold mb-2">SPY×FAMILYワークブック アーニャとたしざん・ひきざん1年生</h5>
                                 <p class="venue-badge mb-3">
-                                    <i class="bi bi-geo-alt-fill"></i> ブルーノート東京
+                                    <i class="bi bi-geo-alt-fill"></i> ペキォ　遠藤達哉
                                 </p>
                                 <div class="d-flex gap-2 mb-3">
-                                    <span class="badge" style="background-color: #dbeafe; color: #1e40af;">ジャズ</span>
-                                    <span class="badge" style="background-color: #ddd6fe; color: #5b21b6;">ブルース</span>
+                                    <span class="badge" style="background-color: #dbeafe; color: #1e40af;">学習</span>
+                                    <span class="badge" style="background-color: #ddd6fe; color: #5b21b6;">マンガ</span>
                                 </div>
                                 <p class="card-text text-muted small mb-3">
-                                    世界的ジャズミュージシャンによる贅沢なセッションライブ。大人の音楽空間をお楽しみください
+                                    算数の基本「たしざん・ひきざん」をわかりやすく!<br>
+                                    人気まんが『SPY×FAMILY』のキャラクターと楽しく学べる<br>
+                                    「SPY×FAMILYワークブックシリーズ」
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div class="price-tag">¥9,800〜</div>
+                                    <div class="price-tag">¥1,210</div>
                                     <button class="btn btn-primary">
                                         詳細を見る <i class="bi bi-arrow-right"></i>
                                     </button>
@@ -493,30 +497,30 @@
 
                     <div class="col-md-6">
                         <div class="card event-list-card">
-                            <img src="https://placehold.co/600x200/a855f7/ffffff?text=EDM+Party" class="event-list-img"
-                                alt="EDM Party">
+                            <img src="img/book_oden.webp" class="event-list-img" alt="EDM Party">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between align-items-start mb-2">
                                     <div>
                                         <span class="date-badge">
-                                            <i class="bi bi-calendar-event"></i> 12月20日
+                                            <i class="bi bi-calendar-event"></i> 12月2日 発売
                                         </span>
                                     </div>
                                     <span class="badge bg-success">販売中</span>
                                 </div>
-                                <h5 class="card-title fw-bold mb-2">ELECTRO WAVE FESTIVAL</h5>
+                                <h5 class="card-title fw-bold mb-2">おでん学!</h5>
                                 <p class="venue-badge mb-3">
-                                    <i class="bi bi-geo-alt-fill"></i> 幕張メッセ
+                                    <i class="bi bi-geo-alt-fill"></i> 紀文食品おでん研究班
                                 </p>
                                 <div class="d-flex gap-2 mb-3">
-                                    <span class="badge" style="background-color: #e0e7ff; color: #3730a3;">EDM</span>
-                                    <span class="badge" style="background-color: #dbeafe; color: #1e40af;">エレクトロ</span>
+                                    <span class="badge" style="background-color: #e0e7ff; color: #3730a3;">雑学</span>
+                                    <span class="badge" style="background-color: #dbeafe; color: #1e40af;">料理</span>
                                 </div>
                                 <p class="card-text text-muted small mb-3">
-                                    世界トップクラスのDJが集結!踊り明かす最高の一夜。最先端のサウンドシステムで極上の体験を
+                                    紀文食品広報室のおでん研究班は、30年にわたる「家庭の鍋料理調査」や全国各地でのフィールドワークを続けてきました。<br>
+                                    独自の調査データ×地理×民俗学の視点で全国のおでんを読み解くと、おでんに映る日本人の暮らしが浮かび上がります。
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div class="price-tag">¥7,500〜</div>
+                                    <div class="price-tag">¥1,320</div>
                                     <button class="btn btn-primary">
                                         詳細を見る <i class="bi bi-arrow-right"></i>
                                     </button>
@@ -527,31 +531,29 @@
 
                     <div class="col-md-6">
                         <div class="card event-list-card">
-                            <img src="https://placehold.co/600x200/10b981/ffffff?text=Acoustic+Live"
-                                class="event-list-img" alt="Acoustic Live">
+                            <img src="img/book_sosite.webp" class="event-list-img" alt="Acoustic Live">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between align-items-start mb-2">
                                     <div>
                                         <span class="date-badge">
-                                            <i class="bi bi-calendar-event"></i> 12月25日
+                                            <i class="bi bi-calendar-event"></i> 12月2日 発売
                                         </span>
                                     </div>
                                     <span class="badge bg-success">販売中</span>
                                 </div>
-                                <h5 class="card-title fw-bold mb-2">WINTER ACOUSTIC NIGHT</h5>
+                                <h5 class="card-title fw-bold mb-2">そして血は語る</h5>
                                 <p class="venue-badge mb-3">
-                                    <i class="bi bi-geo-alt-fill"></i> なんばHatch
+                                    <i class="bi bi-geo-alt-fill"></i> デニーン・ミルナー 北田絵里子
                                 </p>
                                 <div class="d-flex gap-2 mb-3">
-                                    <span class="badge"
-                                        style="background-color: #d1fae5; color: #065f46;">アコースティック</span>
-                                    <span class="badge" style="background-color: #fef3c7; color: #92400e;">フォーク</span>
+                                    <span class="badge" style="background-color: #d1fae5; color: #065f46;">小説</span>
+                                    <span class="badge" style="background-color: #fef3c7; color: #92400e;">歴史</span>
                                 </div>
                                 <p class="card-text text-muted small mb-3">
-                                    心温まる冬の夜に、アコースティックサウンドを。アットホームな雰囲気の中で音楽を楽しむ
+                                    60年代米国。南部の厳しい差別から逃れ、育ったNＹで娘を身ごもったグレイス。だが裏切りにより娘は養子縁組に。その子をレイと名付け、里親となったデロリス。人種差別や男女格差が引き裂いた母と娘の物語が、今、三人の黒人女性を通じて一つに編み直される。
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div class="price-tag">¥5,500〜</div>
+                                    <div class="price-tag">¥4,400</div>
                                     <button class="btn btn-primary">
                                         詳細を見る <i class="bi bi-arrow-right"></i>
                                     </button>
@@ -562,30 +564,29 @@
 
                     <div class="col-md-6">
                         <div class="card event-list-card">
-                            <img src="https://placehold.co/600x200/f59e0b/ffffff?text=Hip+Hop" class="event-list-img"
-                                alt="Hip Hop">
+                            <img src="img/book_aiserukoto.webp" class="event-list-img" alt="Hip Hop">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between align-items-start mb-2">
                                     <div>
                                         <span class="date-badge">
-                                            <i class="bi bi-calendar-event"></i> 12月28日
+                                            <i class="bi bi-calendar-event"></i> 12月2日 発売
                                         </span>
                                     </div>
-                                    <span class="badge bg-danger">完売間近</span>
+                                    <span class="badge bg-danger">売り切れ間近</span>
                                 </div>
-                                <h5 class="card-title fw-bold mb-2">URBAN BEATS FESTIVAL</h5>
+                                <h5 class="card-title fw-bold mb-2">愛せることをバカまっすぐにちゃんとやりきる</h5>
                                 <p class="venue-badge mb-3">
-                                    <i class="bi bi-geo-alt-fill"></i> Zepp Tokyo
+                                    <i class="bi bi-geo-alt-fill"></i> 東山広樹
                                 </p>
                                 <div class="d-flex gap-2 mb-3">
-                                    <span class="badge" style="background-color: #fce7f3; color: #9f1239;">ヒップホップ</span>
-                                    <span class="badge" style="background-color: #dbeafe; color: #1e40af;">R&B</span>
+                                    <span class="badge" style="background-color: #fce7f3; color: #9f1239;">生き方</span>
+                                    <span class="badge" style="background-color: #dbeafe; color: #1e40af;">自己啓発</span>
                                 </div>
                                 <p class="card-text text-muted small mb-3">
-                                    日本のヒップホップシーンを代表するアーティストが集結。アーバンカルチャーの最前線を体感
+                                    回り道だらけのキャリアの中で著者がつかみ取った、極めて実践的なルールを伝授。あなたの「好き」を「稼ぐ力」に変えるための具体的なヒントを身につけることができます。
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div class="price-tag">¥6,000〜</div>
+                                    <div class="price-tag">¥1,870</div>
                                     <button class="btn btn-primary">
                                         詳細を見る <i class="bi bi-arrow-right"></i>
                                     </button>
