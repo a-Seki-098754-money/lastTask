@@ -34,7 +34,7 @@
 
         .page-header {
             background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-color) 50%, var(--secondary-color) 100%);
-            color: white;
+            color: var(--text-dark);
             padding: 80px 0 50px 0;
             margin-bottom: 40px;
         }
@@ -92,7 +92,7 @@
             height: 40px;
             border-radius: 8px;
             border: 2px solid #e5e7eb;
-            background: white;
+            background: var(--accent-gold);
             font-weight: bold;
             cursor: pointer;
             transition: all 0.2s ease;
@@ -105,7 +105,7 @@
 
         .alphabet-btn.active {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
+            color: var(--text-dark);
             border-color: var(--primary-color);
         }
 
@@ -160,8 +160,8 @@
     <!-- ページヘッダー -->
     <div class="page-header">
         <div class="container">
-            <h1 class="display-4 fw-bold mb-3">アーティスト一覧</h1>
-            <p class="lead">お気に入りのアーティストを見つけよう</p>
+            <h1 class="display-4 fw-bold mb-3">著者・出版社一覧</h1>
+            <p class="lead">お気に入りの著者を見つけよう</p>
             <div class="row mt-4">
                 <div class="col-md-8">
                     <div class="input-group input-group-lg">
@@ -188,44 +188,44 @@
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="checkbox" id="genre1">
                             <label class="form-check-label" for="genre1">
-                                ロック <span class="badge bg-secondary">45</span>
+                                暮らし <span class="badge bg-secondary">45</span>
                             </label>
                         </div>
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="checkbox" id="genre2">
                             <label class="form-check-label" for="genre2">
-                                ポップ <span class="badge bg-secondary">38</span>
+                                生き方 <span class="badge bg-secondary">38</span>
                             </label>
                         </div>
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="checkbox" id="genre3">
                             <label class="form-check-label" for="genre3">
-                                EDM <span class="badge bg-secondary">32</span>
+                                歴史 <span class="badge bg-secondary">32</span>
                             </label>
                         </div>
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="checkbox" id="genre4">
                             <label class="form-check-label" for="genre4">
-                                ジャズ <span class="badge bg-secondary">28</span>
+                                人物 <span class="badge bg-secondary">28</span>
                             </label>
                         </div>
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="checkbox" id="genre5">
                             <label class="form-check-label" for="genre5">
-                                ヒップホップ <span class="badge bg-secondary">25</span>
+                                学習 <span class="badge bg-secondary">25</span>
                             </label>
                         </div>
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="checkbox" id="genre6">
                             <label class="form-check-label" for="genre6">
-                                R&B <span class="badge bg-secondary">20</span>
+                                マンガ <span class="badge bg-secondary">20</span>
                             </label>
                         </div>
                     </div>
 
                     <!-- 人気度 -->
                     <div class="mb-4">
-                        <h6 class="fw-bold mb-3">人気度</h6>
+                        <h6 class="fw-bold mb-3">タイプ/注目度</h6>
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="radio" name="popularity" id="pop1">
                             <label class="form-check-label" for="pop1">
@@ -235,13 +235,25 @@
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="radio" name="popularity" id="pop2">
                             <label class="form-check-label" for="pop2">
-                                人気上昇中
+                                人気作家
+                            </label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="popularity" id="pop3">
+                            <label class="form-check-label" for="pop3">
+                                注目の新人
                             </label>
                         </div>
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="radio" name="popularity" id="pop3">
                             <label class="form-check-label" for="pop3">
                                 殿堂入り
+                            </label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="popularity" id="pop3">
+                            <label class="form-check-label" for="pop3">
+                                受賞者
                             </label>
                         </div>
                     </div>
@@ -256,7 +268,7 @@
             <div class="col-lg-9">
                 <!-- アルファベットフィルター -->
                 <div class="alphabet-filter mb-4">
-                    <button class="alphabet-btn active">全て</button>
+                    <button class="alphabet-btn active">All</button>
                     <button class="alphabet-btn">A</button>
                     <button class="alphabet-btn">B</button>
                     <button class="alphabet-btn">C</button>
@@ -299,16 +311,15 @@
                 <div class="row g-4">
                     <div class="col-md-4 col-sm-6">
                         <div class="card artist-card">
-                            <img src="https://placehold.co/300x250/ff6b6b/ffffff?text=THE+ROCKERS" class="artist-img"
-                                alt="THE ROCKERS">
+                            <img src="img/author1.webp" class="artist-img" alt="author1">
                             <div class="card-body">
                                 <span class="badge genre-badge mb-2"
-                                    style="background-color: #fee2e2; color: #991b1b;">ロック</span>
-                                <h5 class="card-title fw-bold mb-2">THE ROCKERS</h5>
-                                <p class="card-text text-muted small mb-2">日本を代表するロックバンド</p>
+                                    style="background-color: #fee2e2; color: #991b1b;">暮らし</span>
+                                <h5 class="card-title fw-bold mb-2">森川　澄子</h5>
+                                <p class="card-text text-muted small mb-2">シンプルで心地よい暮らしを提案する随筆家</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <span class="followers-count">
-                                        <i class="bi bi-people-fill"></i> 250K
+                                        <i class="bi bi-people-fill"></i> 1.2M
                                     </span>
                                     <button class="btn btn-sm btn-outline-primary">
                                         <i class="bi bi-heart"></i> フォロー
@@ -362,16 +373,15 @@
 
                     <div class="col-md-4 col-sm-6">
                         <div class="card artist-card">
-                            <img src="https://placehold.co/300x250/10b981/ffffff?text=ACOUSTIC+DUO" class="artist-img"
-                                alt="ACOUSTIC DUO">
+                            <img src="img/author2_ootani.webp" class="artist-img" alt="ACOUSTIC DUO">
                             <div class="card-body">
                                 <span class="badge genre-badge mb-2"
-                                    style="background-color: #d1fae5; color: #065f46;">アコースティック</span>
-                                <h5 class="card-title fw-bold mb-2">ACOUSTIC DUO</h5>
-                                <p class="card-text text-muted small mb-2">心温まるデュオ</p>
+                                    style="background-color: #d1fae5; color: #065f46;">生き方</span>
+                                <h5 class="card-title fw-bold mb-2">大谷　陽介</h5>
+                                <p class="card-text text-muted small mb-2">人生哲学や自己探求を語るエッセイスト</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <span class="followers-count">
-                                        <i class="bi bi-people-fill"></i> 120K
+                                        <i class="bi bi-people-fill"></i> 2.2M
                                     </span>
                                     <button class="btn btn-sm btn-outline-primary">
                                         <i class="bi bi-heart"></i> フォロー
@@ -383,13 +393,12 @@
 
                     <div class="col-md-4 col-sm-6">
                         <div class="card artist-card">
-                            <img src="https://placehold.co/300x250/f59e0b/ffffff?text=MC+FLOW" class="artist-img"
-                                alt="MC FLOW">
+                            <img src="img/auhor3_saeki.webp" class="artist-img" alt="MC FLOW">
                             <div class="card-body">
                                 <span class="badge genre-badge mb-2"
-                                    style="background-color: #fce7f3; color: #9f1239;">ヒップホップ</span>
-                                <h5 class="card-title fw-bold mb-2">MC FLOW</h5>
-                                <p class="card-text text-muted small mb-2">人気ラッパー</p>
+                                    style="background-color: #fce7f3; color: #9f1239;">歴史</span>
+                                <h5 class="card-title fw-bold mb-2">佐伯　真一郎</h5>
+                                <p class="card-text text-muted small mb-2">古代から近代までを物語風に解説する歴史作家</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <span class="followers-count">
                                         <i class="bi bi-people-fill"></i> 200K
@@ -404,16 +413,15 @@
 
                     <div class="col-md-4 col-sm-6">
                         <div class="card artist-card">
-                            <img src="https://placehold.co/300x250/ec4899/ffffff?text=POP+STARS" class="artist-img"
-                                alt="POP STARS">
+                            <img src="img/author4_toudou.webp" class="artist-img" alt="POP STARS">
                             <div class="card-body">
                                 <span class="badge genre-badge mb-2"
-                                    style="background-color: #fef3c7; color: #92400e;">ポップ</span>
-                                <h5 class="card-title fw-bold mb-2">POP STARS</h5>
-                                <p class="card-text text-muted small mb-2">人気ポップグループ</p>
+                                    style="background-color: #fef3c7; color: #92400e;">人物</span>
+                                <h5 class="card-title fw-bold mb-2">藤堂 美奈</h5>
+                                <p class="card-text text-muted small mb-2">偉人や著名人の伝記を現代的に描くノンフィクション作家</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <span class="followers-count">
-                                        <i class="bi bi-people-fill"></i> 300K
+                                        <i class="bi bi-people-fill"></i> 100K
                                     </span>
                                     <button class="btn btn-sm btn-outline-primary">
                                         <i class="bi bi-heart"></i> フォロー
@@ -425,13 +433,13 @@
 
                     <div class="col-md-4 col-sm-6">
                         <div class="card artist-card">
-                            <img src="https://placehold.co/300x250/8b5cf6/ffffff?text=METAL+FORCE" class="artist-img"
+                            <img src="img/author5_inoue.webp" class="artist-img"
                                 alt="METAL FORCE">
                             <div class="card-body">
                                 <span class="badge genre-badge mb-2"
-                                    style="background-color: #1f2937; color: white;">メタル</span>
-                                <h5 class="card-title fw-bold mb-2">METAL FORCE</h5>
-                                <p class="card-text text-muted small mb-2">激しいメタルバンド</p>
+                                    style="background-color: #1f2937; color: white;">学習</span>
+                                <h5 class="card-title fw-bold mb-2">井上 学</h5>
+                                <p class="card-text text-muted small mb-2">学びを楽しくする教育系著者</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <span class="followers-count">
                                         <i class="bi bi-people-fill"></i> 150K
@@ -446,7 +454,7 @@
 
                     <div class="col-md-4 col-sm-6">
                         <div class="card artist-card">
-                            <img src="https://placehold.co/300x250/3b82f6/ffffff?text=SOUL+SINGER" class="artist-img"
+                            <img src="img/author6_kannda.webp" class="artist-img"
                                 alt="SOUL SINGER">
                             <div class="card-body">
                                 <span class="badge genre-badge mb-2"
