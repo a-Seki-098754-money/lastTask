@@ -13,11 +13,13 @@
             --background-light: #f8f4e3;
             --accent-gold: #d4af37;
             --text-dark: #333333;
+            --prymary-color: #2c5e4f;
         }
 
         body {
             background-color: var(--background-light);
             color: var(--text-dark);
+            font-family: "Sawaribi Mincho", serif;
         }
 
         .navbar {
@@ -32,8 +34,8 @@
         }
 
         .event-header {
-            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-color) 50%, var(--secondary-color) 100%);
-            color: white;
+            background: linear-gradient(135deg, #013220 0%, #2c5e4f 100%);
+            color: var(--background-light);
             padding: 40px;
             border-radius: 20px;
             margin-top: -100px;
@@ -45,8 +47,8 @@
             background: white;
             border-radius: 15px;
             padding: 20px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            margin-bottom: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 24px;
         }
 
         .carousel-item img {
@@ -82,7 +84,7 @@
 
         .accordion-button:not(.collapsed) {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
+            color: var(--text-dark);
         }
 
         .stage-badge {
@@ -101,7 +103,7 @@
 
         .stat-box {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
+            color: var(--text-dark);
             padding: 20px;
             border-radius: 15px;
             text-align: center;
@@ -109,7 +111,7 @@
 
         .ticket-cta {
             background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
-            color: white;
+            color: var(--text-dark);
             padding: 30px;
             border-radius: 15px;
             text-align: center;
@@ -168,8 +170,8 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#">ホーム</a></li>
-                <li class="breadcrumb-item"><a href="#">イベント一覧</a></li>
-                <li class="breadcrumb-item active" aria-current="page">SUMMER MUSIC FESTIVAL 2024</li>
+                <li class="breadcrumb-item"><a href="#">小説</a></li>
+                <li class="breadcrumb-item active" aria-current="page">月夜の消える場所</li>
             </ol>
         </nav>
 
@@ -183,20 +185,16 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="https://placehold.co/1200x400/8b5cf6/ffffff?text=Main+Stage" class="d-block w-100"
-                        alt="メインステージ">
+                    <img src="img/author9_tukamoto.webp" class="d-block w-100" alt="メインステージ">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://placehold.co/1200x400/ec4899/ffffff?text=Past+Event+1" class="d-block w-100"
-                        alt="過去の様子1">
+                    <img src="img/caloucel02.webp" class="d-block w-100" alt="過去の様子1">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://placehold.co/1200x400/06b6d4/ffffff?text=Past+Event+2" class="d-block w-100"
-                        alt="過去の様子2">
+                    <img src="img/caloucel03.webp" class="d-block w-100" alt="過去の様子2">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://placehold.co/1200x400/10b981/ffffff?text=Festival+Atmosphere"
-                        class="d-block w-100" alt="会場の雰囲気">
+                    <img src="img/caloucel04.webp" class="d-block w-100" alt="会場の雰囲気">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#eventCarousel" data-bs-slide="prev">
@@ -214,29 +212,29 @@
             <div class="row align-items-center">
                 <div class="col-lg-8">
                     <div class="d-flex gap-2 mb-3">
-                        <span class="badge bg-light text-dark fs-6">ロック</span>
-                        <span class="badge bg-warning text-dark fs-6">ポップ</span>
-                        <span class="badge bg-success fs-6">販売中</span>
+                        <span class="badge bg-light text-dark fs-6">純文学</span>
+                        <span class="badge bg-warning text-dark fs-6">本屋大賞 ノミネート</span>
+                        <span class="badge bg-success fs-6">新刊</span>
                     </div>
-                    <h1 class="display-4 fw-bold mb-3">SUMMER MUSIC FESTIVAL 2024</h1>
+                    <h1 class="display-4 fw-bold mb-3">月夜の消える場所</h1>
                     <div class="d-flex flex-wrap gap-4 mb-3">
                         <div>
-                            <i class="bi bi-calendar-event fs-5"></i>
-                            <span class="ms-2 fs-5">2024年12月3日（火）</span>
+                            <i class="bi bi-person-fill fs-5"></i>
+                            <span class="ms-2 fs-5">著者：塚本 秋彦</span>
                         </div>
                         <div>
-                            <i class="bi bi-clock fs-5"></i>
-                            <span class="ms-2 fs-5">開場 15:00 / 開演 16:00</span>
+                            <i class="bi bi-journal-text fs-5"></i>
+                            <span class="ms-2 fs-5">2024年12月20日 発売</span>
                         </div>
                     </div>
                     <div class="mb-3">
-                        <i class="bi bi-geo-alt-fill fs-5"></i>
-                        <span class="ms-2 fs-5">東京ビッグサイト</span>
+                        <i class="bi bi-building fs-5"></i>
+                        <span class="ms-2 fs-5">三読出版社（The Third Read Press）</span>
                     </div>
                 </div>
                 <div class="col-lg-4 text-lg-end">
                     <button class="btn btn-warning btn-lg fw-bold mb-2 w-100">
-                        <i class="bi bi-ticket-perforated"></i> チケットを購入
+                        <i class="bi bi-book"></i> 書籍を購入
                     </button>
                     <button class="btn btn-outline-light btn-lg w-100 mb-2">
                         <i class="bi bi-heart"></i> お気に入りに追加
@@ -253,21 +251,18 @@
             <div class="col-lg-8">
                 <!-- イベント概要 -->
                 <div class="info-card mb-4">
-                    <h3 class="fw-bold mb-3"><i class="bi bi-info-circle-fill text-primary"></i> イベント概要</h3>
+                    <h3 class="fw-bold mb-3"><i class="bi bi-info-circle-fill text-primary"></i> あらすじ</h3>
                     <p class="mb-3">
-                        今年も夏の大型音楽フェスティバルが開催決定!国内外から50組を超える豪華アーティストが集結し、3つのステージで熱いパフォーマンスを繰り広げます。
+                        静かな海辺の街で、記憶を失った一人の男が古い時計店を営んでいた。ある満月の夜、彼は「存在しないはずの住所」が書かれた一通の手紙を受け取る。それは、三十年前に消えたはずの恋人からのメッセージだった。
                     </p>
                     <p class="mb-3">
-                        ロック、ポップ、EDM、ヒップホップなど多彩なジャンルのアーティストが出演。朝から夜まで音楽に浸れる最高の一日をお届けします。
-                    </p>
-                    <p class="mb-0">
-                        会場内には飲食ブースも多数出店!音楽と美味しいフードで最高の夏の思い出を作りましょう。
+                        塚本秋彦が描く、喪失と再生の物語。あなたの心に深く静かに沈み込む、冬の夜にふさわしい一冊です。
                     </p>
                 </div>
 
                 <!-- タイムテーブル -->
                 <div class="timetable-section mb-4">
-                    <h3 class="fw-bold mb-4"><i class="bi bi-clock-history text-primary"></i> タイムテーブル</h3>
+                    <h3 class="fw-bold mb-4"><i class="bi bi-clock-history text-primary"></i> 目次・構成</h3>
 
                     <div class="accordion" id="timetableAccordion">
                         <!-- メインステージ -->
@@ -275,8 +270,8 @@
                             <h2 class="accordion-header">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#mainStage">
-                                    <span class="stage-badge bg-danger text-white me-3">MAIN STAGE</span>
-                                    メインステージ
+                                    <span class="stage-badge bg-danger text-white me-3">第一章</span>
+                                    満月の弔い
                                 </button>
                             </h2>
                             <div id="mainStage" class="accordion-collapse collapse show"
@@ -515,14 +510,14 @@
                 <div class="row g-3 mb-4">
                     <div class="col-6">
                         <div class="stat-box">
-                            <h3 class="fw-bold mb-1">50+</h3>
-                            <small>出演アーティスト</small>
+                            <h3 class="fw-bold mb-1">320</h3>
+                            <small>ページ数</small>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="stat-box">
-                            <h3 class="fw-bold mb-1">3</h3>
-                            <small>ステージ数</small>
+                            <h3 class="fw-bold mb-1">4.5</h3>
+                            <small>平均評価</small>
                         </div>
                     </div>
                     <div class="col-6">
