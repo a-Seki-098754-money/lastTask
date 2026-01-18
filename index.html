@@ -18,6 +18,7 @@
         body {
             background-color: var(--background-light);
             color: var(--text-dark);
+            font-family: "Sawaribi Mincho", serif;
         }
 
         .navbar {
@@ -60,6 +61,11 @@
         .btn-outline-light {
             background-color: transparent !important;
             color: var(--accent-gold) !important;
+        }
+
+        .btn-outline-light:hover {
+            background-color: var(--accent-gold) !important;
+            color: var(--main-dark) !important;
         }
 
         .event-card {
@@ -211,9 +217,9 @@
                 </div>
             </div>
             <div class="mt-4">
-                <button class="btn btn-outline-light btn-lg me-2">
-                    <i class="bi bi-journal-bookmark"></i> 注目の特集を見る
-                </button>
+                <a href="book-detail.html" class="btn btn-outline-light btn-lg me-2">
+                    <i class="bi bi-journal-bookmark"></i> 注目の書籍を見る
+                </a>
                 <button class="btn btn-light btn-lg">
                     <i class="bi bi-book"></i> ランキングを見る
                 </button>
