@@ -26,10 +26,15 @@
         }
 
         .page-header {
-            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-color) 50%, var(--secondary-color) 100%);
-            color: white;
+            background: linear-gradient(135deg, var(--main-dark) 0%, #1a4d3c 50%, 100%);
+            color: var(--text-dark);
             padding: 80px 0 50px 0;
             margin-bottom: 40px;
+        }
+
+        .breadcrumb a {
+            color: var(--text-dark);
+            text-decoration: none;
         }
 
         .step-indicator {
@@ -62,24 +67,24 @@
             height: 50px;
             border-radius: 50%;
             background: white;
-            border: 3px solid #e5e7eb;
+            border: 3px solid var(--text-dark);
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 10px;
             font-weight: bold;
-            color: #9ca3af;
+            color: var(--text-dark);
         }
 
         .step.active .step-circle {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            border-color: var(--primary-color);
+            background: var(--main-dark);
+            border-color: var(--accent-gold);
             color: white;
         }
 
         .step.completed .step-circle {
-            background: #10b981;
-            border-color: #10b981;
+            background: #2c5e4f;
+            border-color: #2c5e4f;
             color: white;
         }
 
@@ -90,6 +95,7 @@
             transition: all 0.3s ease;
             cursor: pointer;
             background: white;
+            color: var(--text-dark);
         }
 
         .ticket-card:hover {
@@ -98,15 +104,23 @@
             box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
         }
 
-        .ticket-card.selected {
-            border-color: var(--primary-color);
-            background: rgba(139, 92, 246, 0.05);
+        .ticket-card.active {
+            border-color: var(--main-dark) !important;
+            border-color: var(--accent-gold) !important;
+            color: var(--text-dark) !important;
+            transform: translateY(-5px);
             box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
         }
 
+        .ticket-card.active .price-tag,
+        .ticket-card.active .bi-check-circle-fill {
+            color: var(--accent-gold) !important;
+        }
+
+
         .price-tag {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
+            color: var(--text-dark);
             padding: 15px 25px;
             border-radius: 10px;
             font-size: 1.5rem;
@@ -189,6 +203,39 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         }
 
+        /* お届け方法のスタイル*/
+        /* お届け方法カードのスタイル */
+        .delivery-option-card {
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: white;
+            height: 100%;
+        }
+
+        .delivery-option-card:hover {
+            border-color: var(--main-dark);
+            transform: translateY(-5px);
+        }
+
+        /* 選択時のスタイル（前の修正と合わせる） */
+        .delivery-option-card.active {
+            background-color: var(--main-dark);
+            border-color: var(--accent-gold);
+            color: white;
+        }
+
+        .delivery-option-card.active .text-muted,
+        .delivery-option-card.active .text-success {
+            color: rgba(255, 255, 255, 0.8) !important;
+        }
+
+        .delivery-option-card.active .delivery-price {
+            font-weight: bold;
+            color: var(--accent-gold);
+        }
+
         .alert-custom {
             border-left: 4px solid;
             border-radius: 10px;
@@ -246,14 +293,19 @@
         <div class="container">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#" class="text-white">ホーム</a></li>
-                    <li class="breadcrumb-item"><a href="#" class="text-white">イベント詳細</a></li>
-                    <li class="breadcrumb-item active text-white" aria-current="page">チケット購入</li>
+                    <li class="breadcrumb-item"><a href="#">ホーム</a></li>
+                    <li class="breadcrumb-item"><a href="#">書籍一覧</a></li>
+                    <li class="breadcrumb-item"><a href="#">作品詳細</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">ご購入手続き</li>
                 </ol>
             </nav>
-            <h1 class="display-4 fw-bold mb-3">チケット購入</h1>
-            <p class="lead">SUMMER MUSIC FESTIVAL 2024</p>
-            <p class="mb-0"><i class="bi bi-calendar-event"></i> 2024年12月3日 @ 東京ビッグサイト</p>
+            <h1 class="display-4 fw-bold mb-3">ご購入手続き</h1>
+            <p class="lead fw-bold mb-1">神保町の記憶 - The Third Read</p>
+            <div class="d-flex flex-wrap gap-3 mt-2">
+                <span class="mb-0"><i class="bi bi-person-fill"></i> 著者：三読 太郎</span>
+                <span class="mb-0"><i class="bi bi-building"></i> 出版：三読出版</span>
+                <span class="mb-0"><i class="bi bi-hash"></i> ISBN：978-4-0000-0000-0</span>
+            </div>
         </div>
     </div>
 
@@ -264,19 +316,19 @@
                 <div class="step-circle">
                     <i class="bi bi-check-lg"></i>
                 </div>
-                <div class="fw-bold">チケット選択</div>
+                <div class="fw-bold">カート確認</div>
             </div>
             <div class="step active">
                 <div class="step-circle">2</div>
-                <div class="fw-bold">座席選択</div>
+                <div class="fw-bold">お届け方法</div>
             </div>
             <div class="step">
                 <div class="step-circle">3</div>
-                <div class="fw-bold">お客様情報</div>
+                <div class="fw-bold">お支払い</div>
             </div>
             <div class="step">
                 <div class="step-circle">4</div>
-                <div class="fw-bold">お支払い</div>
+                <div class="fw-bold">注文確認</div>
             </div>
             <div class="step">
                 <div class="step-circle">5</div>
@@ -288,218 +340,124 @@
             <!-- メインコンテンツ -->
             <div class="col-lg-8">
                 <!-- チケット種類選択 -->
-                <div class="mb-4">
-                    <h3 class="fw-bold mb-4"><i class="bi bi-ticket-perforated text-primary"></i> チケット種類を選択</h3>
+                <div class="mb-5">
+                    <h3 class="fw-bold mb-4"><i class="bi bi-journal-bookmark-fill"></i> 書籍の形式を選択</h3>
 
                     <div class="row g-3">
                         <div class="col-md-6">
-                            <div class="ticket-card" data-price="8000" data-type="一般チケット">
+                            <div class="ticket-card" data-price="1800" data-type="単行本（ハードカバー）">
                                 <div class="d-flex justify-content-between align-items-start mb-3">
                                     <div>
-                                        <h5 class="fw-bold mb-1">一般チケット</h5>
-                                        <span class="badge bg-success">販売中</span>
+                                        <h5 class="fw-bold mb-1">単行本</h5>
+                                        <span class="badge bg-success">在庫あり</span>
                                     </div>
-                                    <div class="price-tag">¥8,000</div>
+                                    <div class="price-tag">¥1,800</div>
                                 </div>
                                 <ul class="list-unstyled mb-0">
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> 全ステージ入場可能</li>
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> 再入場可能</li>
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> グッズ購入可能</li>
-                                    <li><i class="bi bi-check-circle-fill text-success"></i> フードエリア利用可能</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="ticket-card" data-price="15000" data-type="VIPチケット">
-                                <div class="d-flex justify-content-between align-items-start mb-3">
-                                    <div>
-                                        <h5 class="fw-bold mb-1">VIPチケット</h5>
-                                        <span class="badge bg-warning text-dark">残りわずか</span>
-                                    </div>
-                                    <div class="price-tag">¥15,000</div>
-                                </div>
-                                <ul class="list-unstyled mb-0">
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> VIPエリア入場可能
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> 上質な布製ハードカバー
                                     </li>
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> 優先入場</li>
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> 専用ラウンジ利用可能
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> 初回限定しおり付属</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> 書き下ろしあとがき収録
                                     </li>
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> 限定グッズ付き</li>
-                                    <li><i class="bi bi-check-circle-fill text-success"></i> ドリンク2杯無料</li>
                                 </ul>
                             </div>
                         </div>
 
                         <div class="col-md-6">
-                            <div class="ticket-card" data-price="6000" data-type="学生チケット">
+                            <div class="ticket-card" data-price="4500" data-type="特装版（著者サイン入り）">
                                 <div class="d-flex justify-content-between align-items-start mb-3">
                                     <div>
-                                        <h5 class="fw-bold mb-1">学生チケット</h5>
-                                        <span class="badge bg-info">要学生証</span>
+                                        <h5 class="fw-bold mb-1">特装版</h5>
+                                        <span class="badge bg-warning text-dark">数量限定</span>
                                     </div>
-                                    <div class="price-tag">¥6,000</div>
+                                    <div class="price-tag">¥4,500</div>
                                 </div>
                                 <ul class="list-unstyled mb-0">
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> 全ステージ入場可能</li>
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> 再入場可能</li>
-                                    <li class="mb-2"><i class="bi bi-exclamation-circle-fill text-warning"></i>
-                                        当日学生証の提示必須</li>
-                                    <li><i class="bi bi-check-circle-fill text-success"></i> 25歳以下限定</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> 著者直筆サイン入り</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> 特製化粧箱入り</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> メイキング小冊子付き
+                                    </li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> オリジナルブックカバー付き
+                                    </li>
                                 </ul>
                             </div>
                         </div>
 
                         <div class="col-md-6">
-                            <div class="ticket-card" data-price="12000" data-type="ペアチケット">
+                            <div class="ticket-card" data-price="1500" data-type="電子書籍（EPUB/PDF）">
                                 <div class="d-flex justify-content-between align-items-start mb-3">
                                     <div>
-                                        <h5 class="fw-bold mb-1">ペアチケット</h5>
+                                        <h5 class="fw-bold mb-1">電子書籍版</h5>
+                                        <span class="badge bg-info">即時閲覧可能</span>
+                                    </div>
+                                    <div class="price-tag">¥1,500</div>
+                                </div>
+                                <ul class="list-unstyled mb-0">
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> 決済後すぐにダウンロード
+                                    </li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> 高画質カラーで図版収録
+                                    </li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> 複数デバイスで閲覧可能
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="ticket-card" data-price="3200" data-type="書籍＋限定トートバック">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <div>
+                                        <h5 class="fw-bold mb-1">グッズセット</h5>
                                         <span class="badge bg-danger">お得</span>
                                     </div>
-                                    <div class="price-tag">¥12,000</div>
+                                    <div class="price-tag">¥3,200</div>
                                 </div>
                                 <ul class="list-unstyled mb-0">
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> 2名分のチケット</li>
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> 通常より¥4,000お得
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> 単行本 1冊</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> 限定ロゴ入りトートバック
                                     </li>
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> 隣同士の座席保証</li>
-                                    <li><i class="bi bi-check-circle-fill text-success"></i> オリジナルグッズ付き</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> 配送料込みのお得価格
+                                    </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 座席選択 -->
-                <div class="mb-4">
-                    <h3 class="fw-bold mb-4"><i class="bi bi-grid-3x3-gap text-primary"></i> 座席を選択</h3>
+                <!-- 配送方法選択 -->
+                <div class="mb-5">
+                    <h3 class="fw-bold mb-4"><i class="bi bi-geo-alt-fill"></i> お届け方法の選択</h3>
 
-                    <div class="seat-map">
-                        <!-- ステージ -->
-                        <div class="stage">
-                            <h4 class="mb-0"><i class="bi bi-music-note-beamed"></i> STAGE</h4>
-                        </div>
-
-                        <!-- 凡例 -->
-                        <div class="mb-4 text-center">
-                            <div class="legend-item">
-                                <div class="legend-box" style="background: #10b981;"></div>
-                                <span>空席</span>
-                            </div>
-                            <div class="legend-item">
-                                <div class="legend-box" style="background: #8b5cf6;"></div>
-                                <span>選択中</span>
-                            </div>
-                            <div class="legend-item">
-                                <div class="legend-box" style="background: #e5e7eb;"></div>
-                                <span>売り切れ</span>
-                            </div>
-                        </div>
-
-                        <!-- 座席エリア A -->
-                        <div class="seat-section">
-                            <h6 class="fw-bold mb-3 text-center">エリア A（前方）</h6>
-                            <div class="text-center">
-                                <div class="mb-2">
-                                    <span class="seat available">A1</span>
-                                    <span class="seat sold">A2</span>
-                                    <span class="seat available">A3</span>
-                                    <span class="seat available">A4</span>
-                                    <span class="seat sold">A5</span>
-                                    <span class="seat available">A6</span>
-                                    <span class="seat available">A7</span>
-                                    <span class="seat sold">A8</span>
-                                </div>
-                                <div class="mb-2">
-                                    <span class="seat sold">B1</span>
-                                    <span class="seat available">B2</span>
-                                    <span class="seat available">B3</span>
-                                    <span class="seat sold">B4</span>
-                                    <span class="seat available">B5</span>
-                                    <span class="seat available">B6</span>
-                                    <span class="seat sold">B7</span>
-                                    <span class="seat available">B8</span>
-                                </div>
-                                <div>
-                                    <span class="seat available">C1</span>
-                                    <span class="seat available">C2</span>
-                                    <span class="seat sold">C3</span>
-                                    <span class="seat available">C4</span>
-                                    <span class="seat available">C5</span>
-                                    <span class="seat sold">C6</span>
-                                    <span class="seat available">C7</span>
-                                    <span class="seat available">C8</span>
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <div class="delivery-option-card active" onclick="selectDelivery(this, 550)">
+                                <div class="card-body text-center p-4">
+                                    <i class="bi bi-house-door fs-1 mb-3"></i>
+                                    <h5 class="fw-bold">自宅配送</h5>
+                                    <p class="small text-muted mb-2">指定の住所へお届けします</p>
+                                    <div class="delivery-price">送料：￥550</div>
                                 </div>
                             </div>
                         </div>
 
-                        <hr class="my-4">
-
-                        <!-- 座席エリア B -->
-                        <div class="seat-section">
-                            <h6 class="fw-bold mb-3 text-center">エリア B（中央）</h6>
-                            <div class="text-center">
-                                <div class="mb-2">
-                                    <span class="seat available">D1</span>
-                                    <span class="seat available">D2</span>
-                                    <span class="seat sold">D3</span>
-                                    <span class="seat available">D4</span>
-                                    <span class="seat available">D5</span>
-                                    <span class="seat available">D6</span>
-                                    <span class="seat sold">D7</span>
-                                    <span class="seat available">D8</span>
-                                    <span class="seat available">D9</span>
-                                    <span class="seat sold">D10</span>
-                                </div>
-                                <div class="mb-2">
-                                    <span class="seat available">E1</span>
-                                    <span class="seat sold">E2</span>
-                                    <span class="seat available">E3</span>
-                                    <span class="seat available">E4</span>
-                                    <span class="seat available">E5</span>
-                                    <span class="seat sold">E6</span>
-                                    <span class="seat available">E7</span>
-                                    <span class="seat available">E8</span>
-                                    <span class="seat available">E9</span>
-                                    <span class="seat available">E10</span>
+                        <div class="col-md-4">
+                            <div class="delivery-option-card" onclick="selectDelivery(this, 0)">
+                                <div class="card-body text-center p-4">
+                                    <i class="bi bi-shop fs-1 mb-3"></i>
+                                    <h5 class="fw-bold">店舗受取</h5>
+                                    <p class="small text-muted mb-2">三読文庫 神保町本店で受取</p>
+                                    <div class="delivery-price text-success">送料：無料</div>
                                 </div>
                             </div>
                         </div>
 
-                        <hr class="my-4">
-
-                        <!-- 座席エリア C -->
-                        <div class="seat-section">
-                            <h6 class="fw-bold mb-3 text-center">エリア C（後方）</h6>
-                            <div class="text-center">
-                                <div class="mb-2">
-                                    <span class="seat available">F1</span>
-                                    <span class="seat available">F2</span>
-                                    <span class="seat available">F3</span>
-                                    <span class="seat available">F4</span>
-                                    <span class="seat available">F5</span>
-                                    <span class="seat available">F6</span>
-                                    <span class="seat available">F7</span>
-                                    <span class="seat available">F8</span>
-                                    <span class="seat available">F9</span>
-                                    <span class="seat available">F10</span>
-                                    <span class="seat available">F11</span>
-                                    <span class="seat available">F12</span>
-                                </div>
-                                <div>
-                                    <span class="seat available">G1</span>
-                                    <span class="seat available">G2</span>
-                                    <span class="seat available">G3</span>
-                                    <span class="seat available">G4</span>
-                                    <span class="seat available">G5</span>
-                                    <span class="seat available">G6</span>
-                                    <span class="seat available">G7</span>
-                                    <span class="seat available">G8</span>
-                                    <span class="seat available">G9</span>
-                                    <span class="seat available">G10</span>
-                                    <span class="seat available">G11</span>
-                                    <span class="seat available">G12</span>
+                        <div class="col-md-4">
+                            <div class="delivery-option-card" onclick="selectDelivery(this, 330)">
+                                <div class="card-body text-center p-4">
+                                    <i class="bi bi-box-seam fs-1 mb-3"></i>
+                                    <h5 class="fw-bold">コンビニ受取</h5>
+                                    <p class="small text-muted mb-2">お近くのローソン・ミニストップ</p>
+                                    <div class="delivery-price">送料：¥330</div>
                                 </div>
                             </div>
                         </div>
@@ -508,50 +466,45 @@
 
                 <!-- 注意事項 -->
                 <div class="alert alert-warning alert-custom border-warning">
-                    <h5 class="alert-heading"><i class="bi bi-exclamation-triangle-fill"></i> 注意事項</h5>
+                    <h5 class="alert-heading"><i class="bi bi-exclamation-triangle-fill"></i> ご購入に関する確認</h5>
                     <ul class="mb-0">
-                        <li>チケットは選択から15分以内に購入手続きを完了してください</li>
-                        <li>座席の選択は先着順です。他のユーザーが先に購入した場合、選択が解除されます</li>
-                        <li>購入後のキャンセル・変更はできません</li>
-                        <li>当日は購入完了メールまたはアプリの電子チケットが必要です</li>
+                        <li>特装版は数量限定のため、決済完了をもって在庫確保となります。</li>
+                        <li>電子書籍版は、購入後すぐに「My Book List」よりお読みいただけます。</li>
+                        <li>配送先住所に誤りがないか、次画面にて必ずご確認ください。</li>
+                        <li>神保町本店での受取は、注文完了から3営業日後より可能です。</li>
                     </ul>
-                </div>
-
-                <div class="alert alert-info alert-custom border-info">
-                    <h5 class="alert-heading"><i class="bi bi-info-circle-fill"></i> お得情報</h5>
-                    <p class="mb-0">ペアチケットは通常より¥4,000お得!友達や家族と一緒に楽しもう!</p>
                 </div>
             </div>
 
             <!-- サイドバー（購入サマリー） -->
             <div class="col-lg-4">
                 <div class="summary-card">
-                    <h5 class="fw-bold mb-4"><i class="bi bi-cart-check"></i> 購入内容</h5>
+                    <h5 class="fw-bold mb-4"><i class="bi bi-cart-check"></i> ご注文内容</h5>
 
                     <div class="mb-4">
-                        <h6 class="text-muted mb-3">イベント情報</h6>
-                        <p class="mb-1 fw-bold">SUMMER MUSIC FESTIVAL 2024</p>
+                        <h6 class="text-muted mb-3">商品情報</h6>
+                        <p class="mb-1 fw-bold">神保町の記憶 - The Third Read</p>
                         <p class="mb-1 small text-muted">
-                            <i class="bi bi-calendar-event"></i> 2024年12月3日（火）
+                            <i class="bi bi-person-fill"></i> 著者：三読 太郎
                         </p>
                         <p class="mb-0 small text-muted">
-                            <i class="bi bi-geo-alt-fill"></i> 東京ビッグサイト
+                            <i class="bi bi-building"></i> 三読出版
                         </p>
                     </div>
 
                     <hr>
 
                     <div class="mb-4">
-                        <h6 class="text-muted mb-3">選択中のチケット</h6>
-                        <div id="selectedTicket" class="text-muted">
-                            チケットを選択してください
+                        <h6 class="text-muted mb-3">選択した形式</h6>
+                        <div id="selectedTicket" class="text-dark fw-bold">
+                            形式を選択してください
                         </div>
                     </div>
 
                     <div class="mb-4">
-                        <h6 class="text-muted mb-3">選択中の座席</h6>
-                        <div id="selectedSeats" class="text-muted">
-                            座席を選択してください
+                        <h6 class="text-muted mb-3">お届け方法</h6>
+                        <div id="selectedSeats" class="text-dark fw-bold">
+                            配送方法を選択してください
                         </div>
                     </div>
 
@@ -559,27 +512,23 @@
 
                     <div class="mb-4">
                         <div class="d-flex justify-content-between mb-2">
-                            <span>チケット料金</span>
+                            <span>書籍代金</span>
                             <span id="ticketPrice">¥0</span>
                         </div>
-                        <div class="d-flex justify-content-between mb-2">
-                            <span>システム手数料</span>
-                            <span id="serviceFee">¥0</span>
-                        </div>
                         <div class="d-flex justify-content-between mb-3">
-                            <span>配送手数料</span>
-                            <span>¥0</span>
+                            <span>配送料</span>
+                            <span id="serviceFee">¥0</span>
                         </div>
                         <hr>
                         <div class="d-flex justify-content-between fs-4 fw-bold">
-                            <span>合計</span>
-                            <span id="totalPrice" style="color: var(--primary-color);">¥0</span>
+                            <span>合計（税込）</span>
+                            <span id="totalPrice" style="color: var(--main-dark);">¥0</span>
                         </div>
                     </div>
 
                     <button class="btn btn-lg w-100 fw-bold mb-2"
-                        style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; border: none;">
-                        次へ進む <i class="bi bi-arrow-right"></i>
+                        style="background: var(--main-dark); color: var(--accent-gold); border: 2px solid var(--accent-gold);">
+                        お支払い方法へ進む <i class="bi bi-arrow-right"></i>
                     </button>
                     <button class="btn btn-outline-secondary btn-lg w-100">
                         <i class="bi bi-arrow-left"></i> 戻る
@@ -587,7 +536,7 @@
 
                     <div class="mt-4 text-center">
                         <small class="text-muted">
-                            <i class="bi bi-lock-fill"></i> 安全な接続で保護されています
+                            <i class="bi bi-lock-fill"></i> 安全なSSL通信で保護されています
                         </small>
                     </div>
                 </div>
@@ -637,72 +586,95 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        let selectedTicketPrice = 0;
-        let selectedTicketType = '';
-        let selectedSeats = [];
 
-        // チケットカード選択
+    <script>
+        // 金額・状態を管理する変数
+        let selectedBookPrice = 0;
+        let selectedBookType = '';
+        let selectedShippingFee = 0;
+        let selectedShippingName = '';
+
+        // 1. 書籍形式（チケットカード）の選択イベント
         document.querySelectorAll('.ticket-card').forEach(card => {
             card.addEventListener('click', function () {
-                document.querySelectorAll('.ticket-card').forEach(c => c.classList.remove('selected'));
-                this.classList.add('selected');
+                // 他のカードの選択状態を解除し、クリックされたカードをactiveにする
+                document.querySelectorAll('.ticket-card').forEach(c => c.classList.remove('active'));
+                this.classList.add('active');
 
-                selectedTicketPrice = parseInt(this.dataset.price);
-                selectedTicketType = this.dataset.type;
-
-                updateSummary();
-            });
-        });
-
-        // 座席選択
-        document.querySelectorAll('.seat.available').forEach(seat => {
-            seat.addEventListener('click', function () {
-                const seatNumber = this.textContent;
-
-                if (this.classList.contains('selected')) {
-                    this.classList.remove('selected');
-                    selectedSeats = selectedSeats.filter(s => s !== seatNumber);
-                } else {
-                    this.classList.add('selected');
-                    selectedSeats.push(seatNumber);
-                }
+                // data属性から価格とタイプを取得
+                selectedBookPrice = parseInt(this.dataset.price);
+                selectedBookType = this.dataset.type;
 
                 updateSummary();
             });
         });
 
-        function updateSummary() {
-            // 選択中のチケット表示
-            if (selectedTicketType) {
-                document.getElementById('selectedTicket').innerHTML = `
-                    <div class="d-flex justify-content-between">
-                        <span>${selectedTicketType}</span>
-                        <span class="fw-bold">¥${selectedTicketPrice.toLocaleString()}</span>
-                    </div>
-                `;
-            }
+        // 2. お届け方法の選択イベント
+        function selectDelivery(element, cost) {
+            // デザインの切り替え
+            document.querySelectorAll('.delivery-option-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            element.classList.add('active');
 
-            // 選択中の座席表示
-            if (selectedSeats.length > 0) {
-                document.getElementById('selectedSeats').innerHTML = `
-                    <div class="d-flex flex-wrap gap-2">
-                        ${selectedSeats.map(seat => `<span class="badge" style="background: var(--primary-color);">${seat}</span>`).join('')}
-                    </div>
-                `;
-            } else {
-                document.getElementById('selectedSeats').innerHTML = '<span class="text-muted">座席を選択してください</span>';
-            }
+            // 送料と配送方法名（カード内のh5テキスト）を取得
+            selectedShippingFee = cost;
+            selectedShippingName = element.querySelector('h5').textContent;
 
-            // 料金計算
-            const serviceFee = selectedTicketPrice > 0 ? Math.floor(selectedTicketPrice * 0.1) : 0;
-            const total = selectedTicketPrice + serviceFee;
-
-            document.getElementById('ticketPrice').textContent = `¥${selectedTicketPrice.toLocaleString()}`;
-            document.getElementById('serviceFee').textContent = `¥${serviceFee.toLocaleString()}`;
-            document.getElementById('totalPrice').textContent = `¥${total.toLocaleString()}`;
+            updateSummary();
         }
+
+        // 3. 右側サマリー（購入内容）の更新関数
+        function updateSummary() {
+            // --- 選択中の商品情報の表示 ---
+            if (selectedBookType) {
+                document.getElementById('selectedTicket').innerHTML = `
+                <div class="d-flex justify-content-between">
+                    <span>${selectedBookType}</span>
+                    <span class="fw-bold">¥${selectedBookPrice.toLocaleString()}</span>
+                </div>
+            `;
+            } else {
+                document.getElementById('selectedTicket').innerHTML = '<span class="text-muted">書籍の形式を選択してください</span>';
+            }
+
+            // --- 選択中のお届け方法の表示 ---
+            const shippingDisplay = document.getElementById('selectedSeats'); // IDは以前のものを流用
+            if (selectedShippingName) {
+                shippingDisplay.innerHTML = `
+                <div class="d-flex justify-content-between">
+                    <span>${selectedShippingName}</span>
+                    <span class="badge bg-secondary">選択済み</span>
+                </div>
+            `;
+            } else {
+                shippingDisplay.innerHTML = '<span class="text-muted">お届け方法を選択してください</span>';
+            }
+
+            // --- 料金計算 ---
+            const total = selectedBookPrice + selectedShippingFee;
+
+            // 右側の金額表示部分を更新
+            // ※HTML側のIDが ticketPrice, serviceFee, totalPrice であることを前提としています
+            if (document.getElementById('ticketPrice')) {
+                document.getElementById('ticketPrice').textContent = `¥${selectedBookPrice.toLocaleString()}`;
+            }
+            if (document.getElementById('serviceFee')) {
+                // 「サービス手数料」という表示を「配送料」として流用
+                document.getElementById('serviceFee').textContent = `¥${selectedShippingFee.toLocaleString()}`;
+            }
+            if (document.getElementById('totalPrice')) {
+                document.getElementById('totalPrice').textContent = `¥${total.toLocaleString()}`;
+            }
+        }
+
+        // 初期状態の表示をリセット
+        window.onload = function () {
+            updateSummary();
+        };
     </script>
+
+
 </body>
 
 </html>
