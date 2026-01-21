@@ -106,17 +106,16 @@
         }
 
         /* 利用規約などのリンク色を微調整 */
-        .login-container+div a,
+        .login-container .link-text,
         .login-footer {
             color: rgba(212, 175, 55, 0.8) !important;
             text-decoration: none;
             transition: 0.3s;
         }
 
-        .login-container+div a:hover,
+        .login-container .link-text:hover,
         .login-footer a:hover {
-            color: #ffffff;
-            text-decoration: underline;
+            color: #ffffff !important;
         }
 
         /*ここまで追記分CSS*/
@@ -357,8 +356,8 @@
         <!-- 追加情報 -->
         <div class="text-center mt-4 login-footer">
             <p class="mb-2">
-                <a href="site-info.html#terms" class="text-decoration-none">利用規約</a> ・
-                <a href="site-info.html#privacy" class="text-decoration-none">プライバシーポリシー</a>
+                <a href="site-info.html#terms" class="link-text">利用規約</a> ・
+                <a href="site-info.html#privacy" class="link-text">プライバシーポリシー</a>
             </p>
             <p class="small">&copy; 2024 The Third Read . All rights reserved.</p>
         </div>
